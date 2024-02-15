@@ -2,9 +2,9 @@
 
 class Conta
 {
-    public string $cpfTitular;
-    public string $nomeTitular;
-    public float $saldo = 0;
+    private string $cpfTitular;
+    private string $nomeTitular;
+    private float $saldo = 0;
 
     public function sacar(float $valorASacar): void
     {
@@ -25,7 +25,7 @@ class Conta
 
         $this->saldo += $valorADepositar;
     }
-
+    
     public function transferir(float $valorATransferir, Conta $contaDestino): void
     {
         if ($valorATransferir > $this->saldo) {
